@@ -102,24 +102,24 @@ class basic_json // NOLINT(cppcoreguidelines-special-member-functions,hicpp-spec
     template<detail::value_t> friend struct detail::external_constructor;
 
     template<typename>
-    friend class ::nlohmann::json_pointer;
+    friend class json_pointer;
     // can be restored when json_pointer backwards compatibility is removed
-    // friend ::nlohmann::json_pointer<StringType>;
+    // friend json_pointer<StringType>;
 
     template<typename BasicJsonType, typename InputType>
-    friend class ::nlohmann::detail::parser;
-    friend ::nlohmann::detail::serializer<basic_json>;
+    friend class detail::parser;
+    friend detail::serializer<basic_json>;
     template<typename BasicJsonType>
-    friend class ::nlohmann::detail::iter_impl;
+    friend class detail::iter_impl;
     template<typename BasicJsonType, typename CharType>
-    friend class ::nlohmann::detail::binary_writer;
+    friend class detail::binary_writer;
     template<typename BasicJsonType, typename InputType, typename SAX>
-    friend class ::nlohmann::detail::binary_reader;
+    friend class detail::binary_reader;
     template<typename BasicJsonType, typename InputAdapterType>
-    friend class ::nlohmann::detail::json_sax_dom_parser;
+    friend class detail::json_sax_dom_parser;
     template<typename BasicJsonType, typename InputAdapterType>
-    friend class ::nlohmann::detail::json_sax_dom_callback_parser;
-    friend class ::nlohmann::detail::exception;
+    friend class detail::json_sax_dom_callback_parser;
+    friend class detail::exception;
 
     /// workaround type for MSVC
     using basic_json_t = NLOHMANN_BASIC_JSON_TPL;
